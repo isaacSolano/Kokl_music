@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="com.HashHub.UI.Usuarios.InicioSesion.InicioSesion"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="1">Inicie sesion y disfrute el servicio</Label>
+
+    <Label text="Ingrese su nombre de usuario" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <TextField GridPane.rowIndex="8" GridPane.columnIndex="1" />
+
+    <Label text="Ingrese su contrasena" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+    <PasswordField GridPane.rowIndex="10" GridPane.columnIndex="1" />
+
+    <Button text="Iniciar sesion" GridPane.rowIndex="14" GridPane.columnIndex="1" />
+    <Button text="Volver" GridPane.rowIndex="15" GridPane.columnIndex="1" onAction="#redirigirInicio"/>
+
+</GridPane>

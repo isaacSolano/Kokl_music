@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="com.HashHub.UI.Usuarios.RegistrarUsuarios.RegistrarUsuarios"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="1">Registrese en nuestra comunidad</Label>
+
+    <Label text="Nombre" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Apellidos" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <Label text="Edad" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    <Label text="Pais de procedencia" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    <Label text="Identificacion" GridPane.rowIndex="11" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+
+
+    <Label text="Contrasena" GridPane.rowIndex="13" GridPane.columnIndex="1" />
+    <TextField GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+
+    <Button text="Registrar informacion" GridPane.rowIndex="16" GridPane.columnIndex="1" />
+    <Button text="Volver" GridPane.rowIndex="17" GridPane.columnIndex="1" onAction="#redirigirInicio"/>
+
+</GridPane>
