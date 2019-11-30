@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="com.Kokl.UI.Usuarios.InicioSesion.InicioSesion"
+          stylesheets="/com/Kokl/UI/GeneralStyles.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="titulo">Inicie sesión y disfrúte el servicio</Label>
+
+    <Label text="Ingrese su nombre de usuario" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="inputNombreUsuario" />
+
+    <Label text="Ingrese su contraseña" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <PasswordField GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="inputContrasena" />
+
+    <GridPane GridPane.rowIndex="10" GridPane.columnIndex="1">
+        <Button text="Iniciar sesión" GridPane.rowIndex="10" GridPane.columnIndex="1" onAction="#iniciarSesion" />
+        <Label GridPane.rowIndex="10" GridPane.columnIndex="2" styleClass="separador" />
+        <Button text="Volver" GridPane.rowIndex="10" GridPane.columnIndex="3" onAction="#redirigirInicio"/>
+    </GridPane>
+
+    <GridPane GridPane.rowIndex="12" GridPane.columnIndex="1" fx:id="panelError">
+
+    </GridPane>
+
+</GridPane>

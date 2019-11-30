@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.Kokl.UI.Usuarios.RegistrarUsuarios.RegistrarUsuarios"
+          stylesheets="/com/Kokl/UI/GeneralStyles.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <ScrollPane layoutY="775" layoutX="800">
+        <VBox>
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="titulo">Regístrese en nuestra comunidad</Label>
+
+            <Label text="Nombre" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="inputNombre"/>
+
+            <Label text="Apellidos" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="inputApellidos"/>
+
+            <Label text="Edad" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="8" GridPane.columnIndex="1" fx:id="inputEdad" onKeyReleased="#verificarEdad" />
+            <GridPane  GridPane.rowIndex="9" GridPane.columnIndex="1" fx:id="panelErrorEdad">
+
+            </GridPane>
+
+            <Label text="Pais de procedencia" GridPane.rowIndex="10" GridPane.columnIndex="1" />
+            <ComboBox value="Seleccione" GridPane.rowIndex="11" GridPane.columnIndex="1" fx:id="inputPais">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Belize" />
+                        <String fx:value="Guatemala" />
+                        <String fx:value="El Salvador" />
+                        <String fx:value="Honduras" />
+                        <String fx:value="Nicaragua" />
+                        <String fx:value="Costa Rica" />
+                        <String fx:value="Panama" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Identificación" GridPane.rowIndex="12" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="13" GridPane.columnIndex="1" fx:id="inputIdentificacion" onKeyReleased="#verificarIdentificacion"/>
+            <GridPane GridPane.rowIndex="14" GridPane.columnIndex="1" fx:id="panelErrorIdentificacion">
+
+            </GridPane>
+
+            <Label text="Correo electrónico" GridPane.rowIndex="15" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="16" GridPane.columnIndex="1" fx:id="inputCorreoElectronico"/>
+
+            <Label text="Nombre de usuario" GridPane.rowIndex="17" GridPane.columnIndex="1" />
+            <TextField GridPane.rowIndex="18" GridPane.columnIndex="1" fx:id="inputNombreUsuario"/>
+
+            <Label text="Contrasenña" GridPane.rowIndex="19" GridPane.columnIndex="1" />
+            <PasswordField GridPane.rowIndex="20" GridPane.columnIndex="1" fx:id="inputContrasena" onKeyReleased="#verificarContrasena" />
+            <GridPane GridPane.rowIndex="21" GridPane.columnIndex="1" fx:id="panelErrorContrasena">
+
+            </GridPane>
+
+            <GridPane GridPane.rowIndex="25" GridPane.columnIndex="1">
+                <Button text="Registrar información" GridPane.rowIndex="25" GridPane.columnIndex="1" onAction="#registrarUsuario" />
+                <Label GridPane.rowIndex="25" GridPane.columnIndex="2" styleClass="separador" />
+                <Button text="Volver" GridPane.rowIndex="25" GridPane.columnIndex="3" onAction="#redirigirInicio" />
+            </GridPane>
+
+            <GridPane GridPane.rowIndex="27" GridPane.columnIndex="1" fx:id="panelError">
+
+            </GridPane>
+        </VBox>
+    </ScrollPane>
+
+</GridPane>

@@ -1,0 +1,13 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.*?>
+<GridPane fx:controller="com.Kokl.UI.Usuarios.Index.Index"
+          stylesheets="/com/Kokl/UI/GeneralStyles.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="2" styleClass="titulo">Bienvenido a Kokl_music !</Label>
+
+    <Button text="Iniciar sesión" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#redirigirInicioSesion"/>
+
+    <Button text="Registrarse" GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#redirigirRegistrarse"/>
+</GridPane>

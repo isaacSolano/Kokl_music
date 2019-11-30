@@ -1,0 +1,1 @@
+jdbc:mysql://localhost/kokl?useSSL=false_com.mysql.jdbc.Driver_root_mypass

@@ -1,0 +1,27 @@
+.alert{
+    -fx-background-color: #4C4789;
+    -fx-font-size: 15;
+}
+.alert .button{
+    -fx-background-color: transparent;
+    -fx-border-color: #F7BF7C;
+    -fx-text-fill: #F7BF7C;
+    -fx-cursor: hand;
+}
+.alert .text-field{
+        -fx-border-color: transparent transparent #fbeed7 transparent;
+        -fx-text-fill: #fbeed7;
+        -fx-background-color: transparent;
+}
+.alert .label{
+    -fx-text-fill: #fbeed7;
+}
+.alert > *.button-bar > *.container{
+    -fx-background-color: #4C4789;
+}
+.alert:header *.header-panel{
+    -fx-background-color: #4C4789;
+}
+.alert:header *.header-panel *.label{
+    -fx-text-fill: #F7BF7C;
+}

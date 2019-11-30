@@ -1,0 +1,75 @@
+.root{
+    -fx-background-color: #242330;
+    -fx-font-size: 15;
+}
+.root *{
+    -fx-background-color: #242330;
+    -fx-font-size: 15;
+}
+.label{
+    -fx-text-fill: #fbeed7;
+}
+.text-field{
+    -fx-pref-width: 300;
+    -fx-border-color: transparent transparent #fbeed7 transparent;
+    -fx-text-fill: #fbeed7;
+    -fx-background-color: transparent;
+}
+
+.date-picker *{
+    -fx-text-fill: #fbeed7;
+    -fx-cursor: hand;
+}
+
+.combo-box{
+    -fx-cursor: hand;
+    -fx-border-color: none;
+    -fx-pref-width: 300;
+    -fx-border-color: transparent transparent #fbeed7 transparent;
+}
+.combo-box *{
+    -fx-cursor: hand;
+    -fx-text-fill: #fbeed7;
+    -fx-background-color: #242330;
+}
+.combo-box *:hover{
+    -fx-text-fill: #242330;
+    -fx-background-color: #fbeed7;
+}
+.button{
+    -fx-background-color: transparent;
+    -fx-border-color: #F7BF7C;
+    -fx-text-fill: #F7BF7C;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
+}
+
+.titulo{
+    -fx-padding: 0 0 50 0;
+    -fx-text-fill: #F7BF7C;
+}
+.separador{
+    -fx-padding: 0 20;
+}
+
+.contenido{
+    -fx-padding: 100 0;
+}
+.contenido .label{
+    -fx-alignment: center;
+}
+
+.menu{
+    -fx-border-color: transparent transparent #F7BF7C transparent;
+    -fx-padding: 15;
+    -fx-height: all;
+}
+.menu .button{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.err{
+    -fx-border-color: transparent transparent #D73C2C;
+    -fx-text-fill: #D73C2C;
+}
