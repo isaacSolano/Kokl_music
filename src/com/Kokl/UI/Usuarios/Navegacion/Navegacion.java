@@ -41,6 +41,15 @@ public class Navegacion extends Perfil {
         Button btnNuevaLista = new Button("Agregar lista");
 //        agregar action event
 
+		Button btnListarCanciones = new Button("Listar canciones");
+		btnListarCanciones.setOnAction( e -> {
+			try{
+				rutas.redirigirListarCanciones(nombreUsuarioActivo, e);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		});
+
         Button btnCerrarSesion = new Button("Cerrar sesión");
         btnCerrarSesion.setOnAction( e -> {
             try {
@@ -61,8 +70,9 @@ public class Navegacion extends Perfil {
 
         panelNavegacion.add(btnPerfil, 1, 1);
         panelNavegacion.add(btnNuevaLista, 3, 1);
-        panelNavegacion.add(btnCambiarContrasena, 4, 1);
-        panelNavegacion.add(btnCerrarSesion, 5, 1);
+        panelNavegacion.add(btnListarCanciones, 4, 1);
+        panelNavegacion.add(btnCambiarContrasena, 5, 1);
+        panelNavegacion.add(btnCerrarSesion, 6, 1);
 
         panelNavegacion.getStyleClass().add("menu");
 
@@ -70,7 +80,7 @@ public class Navegacion extends Perfil {
     }
 
     public void agregarCancion(String nombreUsuarioActivo, javafx.event.ActionEvent e) throws Exception {
-		rutas.redirigirRegistroCancion(nombreUsuarioActivo, e);
+		rutas.redirigirRegistrarCancion(nombreUsuarioActivo, e);
 	}
 
     public void cerrarSesion(javafx.event.ActionEvent event) throws IOException {

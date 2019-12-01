@@ -1,4 +1,4 @@
-package com.Kokl.UI.Usuarios.InicioSesion;
+package com.Kokl.UI.Usuarios.IniciarSesion;
 
 import com.Kokl.UI.Rutas;
 import com.Kokl.UI.Validaciones;

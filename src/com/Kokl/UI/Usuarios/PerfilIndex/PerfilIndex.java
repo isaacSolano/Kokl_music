@@ -24,7 +24,7 @@ public class PerfilIndex extends Perfil {
     }
 
     public void verificarCodigoActivacion(javafx.event.ActionEvent event) throws Exception {
-        String codigoActivacion = gestorPerfilUsuarios.obtenerCodigoVerificacion();
+        String codigoActivacion = gestorPerfilUsuarios.getCodigoVerificacion();
 
         if(!codigoActivacion.equals("Verificado")){
             TextInputDialog alertInVerificarCodigo = new TextInputDialog();

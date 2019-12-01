@@ -9,8 +9,9 @@ public class Cancion {
 	private String album;
 	private int calificacion;
 	private String usuario;
+	private String id;
 
-	public Cancion(String nombre, String genero, String artista, String compositor, String fechaLanzamiento, String album, int calificacion, String usuario) {
+	public Cancion(String nombre, String genero, String artista, String compositor, String fechaLanzamiento, String album, int calificacion, String usuario, String id) {
 		this.nombre = nombre;
 		this.genero = genero;
 		this.artista = artista;
@@ -19,10 +20,11 @@ public class Cancion {
 		this.album = album;
 		this.calificacion = calificacion;
 		this.usuario = usuario;
+		this.id = id;
 	}
 
 	public String toString() {
-		String infoCancion = "Nombre de la cancion: " + this.nombre + this.genero + this.artista + this.compositor + this.fechaLanzamiento + this.album + this.calificacion;
+		String infoCancion = this.nombre + "_" + this.usuario;
 
 		return infoCancion;
 	}
@@ -30,7 +32,7 @@ public class Cancion {
 	public boolean equals(Cancion cancion){
 		boolean err = false;
 
-		if(cancion.getNombre().equals(cancion.getNombre())){
+		if(cancion.getNombre().equals(this.nombre) && cancion.getUsuario().equals(this.usuario)){
 			err = true;
 		}
 
@@ -99,5 +101,13 @@ public class Cancion {
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

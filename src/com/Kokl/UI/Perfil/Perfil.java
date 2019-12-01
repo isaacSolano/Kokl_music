@@ -8,7 +8,6 @@ import com.Kokl.UI.Usuarios.Navegacion.Navegacion;
 
 public class Perfil {
 	protected static PerfilController gestorPerfilUsuarios = new PerfilController();
-	protected static RegistrarCancionesController gestorRegistroCanciones = new RegistrarCancionesController();
 
 	protected static Navegacion navegacion = new Navegacion();
 	protected static Rutas rutas = new Rutas();

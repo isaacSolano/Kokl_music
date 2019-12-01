@@ -7,7 +7,7 @@ public class Index {
     Rutas rutas = new Rutas();
 
     public void redirigirInicioSesion(javafx.event.ActionEvent event) throws IOException {
-        rutas.redirigirInicioSesion(event);
+        rutas.redirigirIniciarSesion(event);
     }
 
     public void redirigirRegistrarse(javafx.event.ActionEvent event) throws IOException{

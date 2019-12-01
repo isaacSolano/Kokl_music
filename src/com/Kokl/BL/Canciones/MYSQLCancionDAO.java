@@ -9,23 +9,29 @@ import java.util.ArrayList;
 public class MYSQLCancionDAO implements ICancionDAO {
 	private String req;
 
-	public boolean registrarCancion(Cancion cancion) throws Exception {
+	public boolean registrarCancion(Cancion nuevaCancion) throws Exception {
 		boolean err = false;
-		Cancion cancionEncontrada = obtenerById(cancion.getNombre());
+		ArrayList<Cancion> listaCanciones = getCanciones();
 
-		if(cancionEncontrada == null){
-			req = "INSERT INTO kokl.canciones (nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, usuario) VALUES ('"+cancion.getNombre()+"', '"+cancion.getGenero()+"', '"+cancion.getArtista()+"', '"+cancion.getCompositor()+"', '"+cancion.getFechaLanzamiento()+"', '"+cancion.getAlbum()+"', "+cancion.getCalificacion()+", '"+cancion.getUsuario()+"')";
-			Connector.getConnector().POST(req);
-		}else{
-			err = true;
+		if(listaCanciones != null) {
+			for (Cancion cancion : listaCanciones) {
+				if (cancion.equals(nuevaCancion)) {
+					err = true;
+				}
+			}
 		}
 
-		return err;
-	}
+		if(!err){
+			req = "INSERT INTO kokl.canciones (nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, usuario, id) VALUES ('" + nuevaCancion.getNombre() + "', '" + nuevaCancion.getGenero() + "', '" + nuevaCancion.getArtista() + "', '" + nuevaCancion.getCompositor() + "', '" + nuevaCancion.getFechaLanzamiento() + "', '" + nuevaCancion.getAlbum() + "', " + nuevaCancion.getCalificacion() + ", '" + nuevaCancion.getUsuario() + "', " + nuevaCancion.getId() + ")";
+			Connector.getConnector().POST(req);
+		}
 
-	public Cancion obtenerById(String nombre) throws Exception {
+			return err;
+		}
+
+	public Cancion getById(String nombre) throws Exception {
 		Cancion cancionEncontrada = null;
-		ArrayList<Cancion> listaCanciones = obtenerCanciones();
+		ArrayList<Cancion> listaCanciones = getCanciones();
 
 		if(listaCanciones != null){
 			for(Cancion cancion : listaCanciones){
@@ -38,7 +44,7 @@ public class MYSQLCancionDAO implements ICancionDAO {
 		return cancionEncontrada;
 	}
 
-	public ArrayList<Cancion> obtenerCanciones() throws Exception {
+	public ArrayList<Cancion> getCanciones() throws Exception {
 		ArrayList<Cancion> listaCanciones = new ArrayList<>();
 		req = "SELECT * FROM kokl.canciones";
 
@@ -46,7 +52,7 @@ public class MYSQLCancionDAO implements ICancionDAO {
 		Cancion cancion;
 
 		while (res.next()){
-			cancion = new Cancion(res.getString("nombre"), res.getString("genero"), res.getString("artista"), res.getString("compositor"), res.getString("fechaLanzamiento"), res.getString("album"), res.getInt("calificacion"), res.getString("usuario"));
+			cancion = new Cancion(res.getString("nombre"), res.getString("genero"), res.getString("artista"), res.getString("compositor"), res.getString("fechaLanzamiento"), res.getString("album"), res.getInt("calificacion"), res.getString("usuario"), res.getString("id"));
 			listaCanciones.add(cancion);
 		}
 

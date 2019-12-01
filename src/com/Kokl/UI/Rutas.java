@@ -1,5 +1,6 @@
 package com.Kokl.UI;
 
+import com.Kokl.UI.Canciones.ListarCanciones.Principal.Principal;
 import com.Kokl.UI.Canciones.RegistrarCanciones.RegistrarCanciones;
 import com.Kokl.UI.Usuarios.PerfilIndex.PerfilIndex;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +23,8 @@ public class Rutas {
         ventana.show();
     }
 
-    public void redirigirInicioSesion(javafx.event.ActionEvent event) throws IOException {
-        Parent inicioSesion = FXMLLoader.load(getClass().getResource("/com/Kokl/UI/Usuarios/InicioSesion/InicioSesion.fxml"));
+    public void redirigirIniciarSesion(javafx.event.ActionEvent event) throws IOException {
+        Parent inicioSesion = FXMLLoader.load(getClass().getResource("/com/Kokl/UI/Usuarios/IniciarSesion/InicioSesion.fxml"));
         Scene inicioSesionEscena = new Scene(inicioSesion, 800, 775);
 
         Stage ventana =(Stage)((Node) event.getSource()).getScene().getWindow();
@@ -67,7 +68,7 @@ public class Rutas {
 		ventana.show();
 	}
 
-	public void redirigirRegistroCancion(String nombreUsuarioActivo, javafx.event.ActionEvent event) throws Exception {
+	public void redirigirRegistrarCancion(String nombreUsuarioActivo, javafx.event.ActionEvent event) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml"));
         Parent registrarCancion = loader.load();
 
@@ -79,6 +80,21 @@ public class Rutas {
         Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
         ventana.setTitle("Registro canciones");
         ventana.setScene(registrarCancionEscena);
+        ventana.show();
+    }
+
+    public void redirigirListarCanciones(String nombreUsuarioActivo, javafx.event.ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Canciones/ListarCanciones/Principal/Principal.fxml"));
+        Parent listarCanciones = loader.load();
+
+        Principal controller = loader.getController();
+        controller.setPaneles(nombreUsuarioActivo);
+
+        Scene listarCancionesEscena = new Scene(listarCanciones, 800, 775);
+
+        Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
+        ventana.setTitle("Lista canciones");
+        ventana.setScene(listarCancionesEscena);
         ventana.show();
     }
 }

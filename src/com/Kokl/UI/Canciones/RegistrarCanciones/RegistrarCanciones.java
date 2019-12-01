@@ -1,13 +1,18 @@
 package com.Kokl.UI.Canciones.RegistrarCanciones;
 
+import com.Kokl.TL.Canciones.RegistrarCanciones.RegistrarCancionesController;
 import com.Kokl.UI.Perfil.Perfil;
 import com.Kokl.UI.Validaciones;
 
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
+import java.util.Random;
+
 public class RegistrarCanciones extends Perfil{
 	Validaciones validaciones = new Validaciones();
+	RegistrarCancionesController gestorRegistroCanciones = new RegistrarCancionesController();
+	Random rdm = new Random();
 
 	public GridPane panelPrincipal, panelContenido, panelError;
 	public TextField inputNombre, inputGenero, inputArtista, inputCompositor, inputAlbum, inputCalificacion;
@@ -39,10 +44,20 @@ public class RegistrarCanciones extends Perfil{
 					compositor = inputArtista.getText(),
 					fechaLanzamiento = inputFechaLanzamiento.getValue().toString(),
 					album = inputAlbum.getText(),
-					usuarioActivo = gestorPerfilUsuarios.getUsuarioActivo().getNombreUsuario();
+					usuarioActivo = gestorPerfilUsuarios.getUsuarioActivo().getNombreUsuario(),
+					admin = gestorPerfilUsuarios.getAdmin().getNombreUsuario(),
+					idUsuarioCancion,
+					idCancion = String.format("%06d", (rdm.nextInt(999999)));
+
+			if(admin.equals(usuarioActivo)){
+				idUsuarioCancion = "0";
+			}else{
+				idUsuarioCancion = usuarioActivo;
+			}
+
 			int calificacion = Integer.parseInt(inputCalificacion.getText());
 
-			boolean err = gestorRegistroCanciones.registrarCancion(nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, usuarioActivo);
+			boolean err = gestorRegistroCanciones.registrarCancion(nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, idUsuarioCancion, idCancion);
 
 			if(err){
 				Alert alertErrRegistro = new Alert(Alert.AlertType.ERROR);

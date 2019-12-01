@@ -73,3 +73,9 @@
     -fx-border-color: transparent transparent #D73C2C;
     -fx-text-fill: #D73C2C;
 }
+
+.selected{
+    -fx-border-color: none;
+    -fx-background-color: #F7BF7C;
+    -fx-text-fill: #242330;
+}

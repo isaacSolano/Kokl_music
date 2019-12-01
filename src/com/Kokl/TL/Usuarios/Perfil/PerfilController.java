@@ -17,7 +17,7 @@ public class PerfilController {
 
     public int setUsuarioActivo(String nombreUsuarioActivo) throws Exception {
         int instance = 0;
-        usuarioActivo = usuarioDAO.obtenerById(nombreUsuarioActivo);
+        usuarioActivo = usuarioDAO.getById(nombreUsuarioActivo);
 
         if(usuarioActivo instanceof Admin){
             instance = 1;
@@ -34,7 +34,7 @@ public class PerfilController {
         usuarioActivo = null;
     }
 
-    public String obtenerCodigoVerificacion() {
+    public String getCodigoVerificacion() {
         String codigoVerificacion = usuarioActivo.getCodigoActivacion();
 
         return codigoVerificacion;
@@ -83,4 +83,10 @@ public class PerfilController {
 
 		return err;
     }
+
+    public Admin getAdmin() throws Exception {
+    	Admin admin = usuarioDAO.getAdmin();
+
+    	return admin;
+	}
 }

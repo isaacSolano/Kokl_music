@@ -13,8 +13,8 @@ public class RegistrarCancionesController {
 		cancionesDAO = factory.getCancionDAO();
 	}
 
-	public boolean registrarCancion(String nombre, String genero, String artista, String compositor, String fechaLanzamiento, String album, int calificacion, String nombreUsuarioActivo) throws Exception {
-		Cancion nuevaCancion = new Cancion(nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, nombreUsuarioActivo);
+	public boolean registrarCancion(String nombre, String genero, String artista, String compositor, String fechaLanzamiento, String album, int calificacion, String nombreUsuarioActivo, String idCancion) throws Exception {
+		Cancion nuevaCancion = new Cancion(nombre, genero, artista, compositor, fechaLanzamiento, album, calificacion, nombreUsuarioActivo, idCancion);
 
 		boolean err = cancionesDAO.registrarCancion(nuevaCancion);
 

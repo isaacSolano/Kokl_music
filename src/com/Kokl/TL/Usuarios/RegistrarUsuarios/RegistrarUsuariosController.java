@@ -13,8 +13,8 @@ public class RegistrarUsuariosController {
         usuarioDAO = factory.getUsuarioDAO();
     }
 
-    public int obtenerCantidadUsuarios() throws Exception {
-        int cantidadUsuarios = usuarioDAO.obtenerCantidadUsuarios();
+    public int getCantidadUsuarios() throws Exception {
+        int cantidadUsuarios = usuarioDAO.getCantidadUsuarios();
 
         return cantidadUsuarios;
     }

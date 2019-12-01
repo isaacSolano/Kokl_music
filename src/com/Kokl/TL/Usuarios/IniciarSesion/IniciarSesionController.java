@@ -14,12 +14,12 @@ public class IniciarSesionController {
     }
     public int iniciarSesion(String nombreUsuario, String contrasena) throws Exception {
         int err = 0;
-        Usuario obtenerUsuario = usuarioDAO.obtenerById(nombreUsuario);
+        Usuario getUsuario = usuarioDAO.getById(nombreUsuario);
 
-        if(obtenerUsuario == null){
+        if(getUsuario == null){
             err= 1;
         }else{
-            if(!obtenerUsuario.getContrasena().equals(contrasena)){
+            if(!getUsuario.getContrasena().equals(contrasena)){
                 err = 2;
             }
         }

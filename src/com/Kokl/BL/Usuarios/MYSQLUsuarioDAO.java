@@ -12,7 +12,7 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 	public int registrarUsuario(Usuario usuario) throws Exception {
 		int err = 0;
 
-		Usuario usuarioEncontrado = obtenerById(usuario.getNombreUsuario());
+		Usuario usuarioEncontrado = getById(usuario.getNombreUsuario());
 
 		if(usuarioEncontrado == null){
 			if(usuario instanceof Cliente){
@@ -30,9 +30,9 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 		return err;
 	}
 
-	public Usuario obtenerById(String nombreUsuario) throws Exception {
+	public Usuario getById(String nombreUsuario) throws Exception {
 		Usuario usuarioEncontrado = null;
-		ArrayList<Usuario> listaUsuarios = obtenerUsuarios();
+		ArrayList<Usuario> listaUsuarios = getUsuarios();
 
 		if(listaUsuarios != null){
 			for(Usuario usuario : listaUsuarios){
@@ -59,7 +59,20 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 		}
 	}
 
-	public ArrayList<Usuario> obtenerUsuarios() throws Exception {
+	public Admin getAdmin() throws Exception {
+		Admin admin = null;
+		ArrayList<Usuario> listaUsuarios = getUsuarios();
+
+		for(Usuario usuario : listaUsuarios){
+			if(usuario instanceof Admin){
+				admin = (Admin) usuario;
+			}
+		}
+
+		return admin;
+	}
+
+	public ArrayList<Usuario> getUsuarios() throws Exception {
 		ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 		req = "SELECT * FROM kokl.cliente";
 
@@ -81,8 +94,8 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 		return listaUsuarios;
 	}
 
-	public int obtenerCantidadUsuarios() throws Exception{
-		int cantidadUsuarios = obtenerUsuarios().size();
+	public int getCantidadUsuarios() throws Exception{
+		int cantidadUsuarios = getUsuarios().size();
 
 		return cantidadUsuarios;
 	}

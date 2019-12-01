@@ -140,7 +140,7 @@ public class RegistrarUsuarios {
 
             int edad = Integer.parseInt(inputEdad.getText()),
                 identificacion = Integer.parseInt(inputIdentificacion.getText()),
-                cantidadUsuarios = gestor.obtenerCantidadUsuarios(),
+                cantidadUsuarios = gestor.getCantidadUsuarios(),
                 errRegistro = -1;
 
             boolean registrar = false;

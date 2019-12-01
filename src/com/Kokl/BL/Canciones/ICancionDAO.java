@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface ICancionDAO {
 	public boolean registrarCancion(Cancion cancion) throws Exception;
-	public Cancion obtenerById(String nombre) throws Exception;
-	public ArrayList<Cancion> obtenerCanciones() throws Exception;
+	public Cancion getById(String nombre) throws Exception;
+	public ArrayList<Cancion> getCanciones() throws Exception;
 }
