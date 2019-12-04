@@ -59,19 +59,6 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 		}
 	}
 
-	public Admin getAdmin() throws Exception {
-		Admin admin = null;
-		ArrayList<Usuario> listaUsuarios = getUsuarios();
-
-		for(Usuario usuario : listaUsuarios){
-			if(usuario instanceof Admin){
-				admin = (Admin) usuario;
-			}
-		}
-
-		return admin;
-	}
-
 	public ArrayList<Usuario> getUsuarios() throws Exception {
 		ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 		req = "SELECT * FROM kokl.cliente";
@@ -98,5 +85,18 @@ public class MYSQLUsuarioDAO implements IUsuarioDAO{
 		int cantidadUsuarios = getUsuarios().size();
 
 		return cantidadUsuarios;
+	}
+
+	public Admin getAdmin() throws Exception {
+		Admin admin = null;
+		ArrayList<Usuario> listaUsuarios = getUsuarios();
+
+		for(Usuario usuario : listaUsuarios){
+			if(usuario instanceof Admin){
+				admin = (Admin) usuario;
+			}
+		}
+
+		return admin;
 	}
 }

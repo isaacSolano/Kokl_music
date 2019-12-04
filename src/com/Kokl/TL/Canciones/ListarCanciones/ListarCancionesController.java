@@ -29,14 +29,21 @@ public class ListarCancionesController {
 		return listaInfoCanciones;
 	}
 
-	public boolean agregarCatalogo(String nombreCancion, String nombreUsuarioActivo) throws Exception {
+	public boolean agregarCatalogo(String nombreUsuarioActivo, String id) throws Exception {
 		boolean err;
 
-		Cancion cancionEncontrada = cancionesDAO.getById(nombreCancion);
+		Cancion cancionEncontrada = cancionesDAO.getById(id);
+
 		cancionEncontrada.setUsuario(nombreUsuarioActivo);
 		cancionEncontrada.setId(String.format("%06d", (rdm.nextInt(999999))));
 
 		err = cancionesDAO.registrarCancion(cancionEncontrada);
+
+		return err;
+	}
+
+	public boolean removerCancion(String id) throws Exception {
+		boolean err = cancionesDAO.removerCancion(id);
 
 		return err;
 	}

@@ -29,13 +29,13 @@ public class MYSQLCancionDAO implements ICancionDAO {
 			return err;
 		}
 
-	public Cancion getById(String nombre) throws Exception {
+	public Cancion getById(String id) throws Exception {
 		Cancion cancionEncontrada = null;
 		ArrayList<Cancion> listaCanciones = getCanciones();
 
 		if(listaCanciones != null){
 			for(Cancion cancion : listaCanciones){
-				if(cancion.getNombre().equals(nombre)){
+				if(cancion.getId().equals(id)){
 					cancionEncontrada = cancion;
 				}
 			}
@@ -57,5 +57,19 @@ public class MYSQLCancionDAO implements ICancionDAO {
 		}
 
 		return listaCanciones;
+	}
+
+	public boolean removerCancion(String id){
+		boolean err = false;
+		req = "DELETE FROM kokl.canciones WHERE id='" + id +"'";
+
+		try {
+			Connector.getConnector().POST(req);
+		} catch (Exception e) {
+			e.printStackTrace();
+			err = true;
+		}
+
+		return err;
 	}
 }

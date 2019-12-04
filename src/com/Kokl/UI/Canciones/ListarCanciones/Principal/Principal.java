@@ -1,11 +1,11 @@
 package com.Kokl.UI.Canciones.ListarCanciones.Principal;
 
-import com.Kokl.TL.Canciones.ListarCanciones.ListarCancionesController;
 import com.Kokl.UI.Canciones.ListarCanciones.Admin.Admin;
 import com.Kokl.UI.Canciones.ListarCanciones.Tienda.Tienda;
 import com.Kokl.UI.Canciones.ListarCanciones.Catalogo.Catalogo;
 import com.Kokl.UI.Perfil.Perfil;
 
+import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.*;
 
@@ -14,7 +14,6 @@ public class Principal extends Perfil {
 	Tienda tienda = new Tienda();
 	Catalogo catalogo = new Catalogo();
 
-	public ListarCancionesController gestorListaCanciones = new ListarCancionesController();
 	String nombreUsuarioAdmin;
 
 	public GridPane panelAdmin;
@@ -34,20 +33,21 @@ public class Principal extends Perfil {
 		panelPrincipal.add(panelNavegacion, 1, 1);
 
 		if(nombreUsuarioActivo.equals(nombreUsuarioAdmin)){
-			setPanelAdmin();
+			setPanelAdmin(nombreUsuarioActivo);
 		}else{
-			setPanelesClient(nombreUsuarioActivo);
+			setPanelesCliente(nombreUsuarioActivo);
 		}
 	}
 
-	public void setPanelAdmin() throws Exception {
-		panelAdmin = admin.crearPanelAdmin();
+	public void setPanelAdmin(String nombreUsuarioActivo) throws Exception {
+		panelAdmin = admin.crearPanelAdmin(nombreUsuarioActivo);
+
 		panelContenido.add(panelAdmin, 1, 2);
 	}
 
-	public void setPanelesClient(String nombreUsuarioActivo) throws Exception {
+	public void setPanelesCliente(String nombreUsuarioActivo) throws Exception {
 		GridPane panelOpciones = new GridPane();
-		
+
 		btnTienda.setOnAction( e -> mostrarPanelTienda());
 		btnCatalogo.setOnAction(e -> mostrarPanelCatalogo());
 
@@ -56,6 +56,10 @@ public class Principal extends Perfil {
 
 		panelTienda = tienda.crearPanelTienda(nombreUsuarioActivo);
 		panelCatalogo = catalogo.crearPanelCatalogo(nombreUsuarioActivo);
+
+		panelOpciones.setAlignment(Pos.CENTER);
+		panelTienda.setAlignment(Pos.CENTER);
+		panelCatalogo.setAlignment(Pos.CENTER);
 
 		btnTienda.getStyleClass().add("selected");
 

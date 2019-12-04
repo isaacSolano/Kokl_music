@@ -8,4 +8,5 @@ public interface ICancionDAO {
 	public boolean registrarCancion(Cancion cancion) throws Exception;
 	public Cancion getById(String nombre) throws Exception;
 	public ArrayList<Cancion> getCanciones() throws Exception;
+	public boolean removerCancion(String id) throws Exception;
 }

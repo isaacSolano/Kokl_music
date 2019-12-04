@@ -24,7 +24,7 @@ public class Cancion {
 	}
 
 	public String toString() {
-		String infoCancion = this.nombre + "_" + this.usuario;
+		String infoCancion = this.nombre + "_" + this.usuario + "_" + this.id;
 
 		return infoCancion;
 	}
