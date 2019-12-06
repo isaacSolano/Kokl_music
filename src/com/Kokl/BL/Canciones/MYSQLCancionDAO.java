@@ -72,4 +72,18 @@ public class MYSQLCancionDAO implements ICancionDAO {
 
 		return err;
 	}
+
+	public boolean editarCancion(Cancion cancion){
+		boolean err = false;
+		req = "update kokl.canciones set nombre='"+cancion.getNombre()+"', genero='"+cancion.getGenero()+"', fechaLanzamiento='"+cancion.getFechaLanzamiento()+"', compositor='"+cancion.getCompositor()+"', calificacion="+cancion.getCalificacion()+", artista='"+cancion.getArtista()+"', album='"+cancion.getAlbum()+"', usuario='"+cancion.getUsuario()+"'where id='"+cancion.getId()+"'";
+
+		try {
+			Connector.getConnector().POST(req);
+		} catch (Exception e) {
+			err = true;
+			e.printStackTrace();
+		}
+
+		return err;
+	}
 }

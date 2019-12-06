@@ -1,5 +1,6 @@
 package com.Kokl.UI;
 
+import com.Kokl.UI.Canciones.EditarCanciones.EditarCanciones;
 import com.Kokl.UI.Canciones.ListarCanciones.Principal.Principal;
 import com.Kokl.UI.Canciones.RegistrarCanciones.RegistrarCanciones;
 import com.Kokl.UI.Usuarios.PerfilIndex.PerfilIndex;
@@ -95,6 +96,21 @@ public class Rutas {
         Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
         ventana.setTitle("Lista canciones");
         ventana.setScene(listarCancionesEscena);
+        ventana.show();
+    }
+
+	public void redirigirEditarCancion(javafx.event.ActionEvent event, String infoCancion) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Canciones/EditarCanciones/EditarCanciones.fxml"));
+        Parent editarCanciones = loader.load();
+
+        EditarCanciones controller = loader.getController();
+        controller.setFormulario(infoCancion);
+
+        Scene editarCancionesEscena = new Scene(editarCanciones, 800, 775);
+
+        Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
+        ventana.setTitle("Editar canciones");
+        ventana.setScene(editarCancionesEscena);
         ventana.show();
     }
 }

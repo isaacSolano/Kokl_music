@@ -1,0 +1,40 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.*?>
+<GridPane fx:controller="com.Kokl.UI.Canciones.EditarCanciones.EditarCanciones"
+          stylesheets="/com/Kokl/UI/GeneralStyles.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10" fx:id="panelPrincipal">
+
+    <GridPane GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="panelContenido" styleClass="contenido" alignment="CENTER">
+        <Label text="Nombre" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="inputNombre"/>
+
+        <Label text="Género" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="inputGenero"/>
+
+        <Label text="Artista" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="inputArtista"/>
+
+        <Label text="Compositor" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="8" GridPane.columnIndex="1" fx:id="inputCompositor" />
+
+        <Label text="Fecha Lanzamiento" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+        <DatePicker GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id="inputFechaLanzamiento"/>
+
+        <Label text="Album" GridPane.rowIndex="11" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="12" GridPane.columnIndex="1" fx:id="inputAlbum" />
+
+        <Label text="Calificación" GridPane.rowIndex="13" GridPane.columnIndex="1" />
+        <TextField GridPane.rowIndex="14" GridPane.columnIndex="1" fx:id="inputCalificacion" />
+
+        <GridPane GridPane.rowIndex="18" GridPane.columnIndex="1">
+            <Button text="Registrar información" GridPane.rowIndex="18" GridPane.columnIndex="1" onAction="#editarCancion" />
+            <Label GridPane.rowIndex="18" GridPane.columnIndex="2" styleClass="separador" />
+            <Button text="Volver" GridPane.rowIndex="18" GridPane.columnIndex="3" onAction="#redirigirPerfil" />
+        </GridPane>
+
+        <GridPane GridPane.rowIndex="20" GridPane.columnIndex="1" fx:id="panelError">
+
+        </GridPane>
+    </GridPane>
+</GridPane>

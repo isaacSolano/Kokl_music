@@ -41,7 +41,7 @@ public class RegistrarCanciones extends Perfil{
 			String nombre = inputNombre.getText(),
 					genero = inputGenero.getText(),
 					artista = inputArtista.getText(),
-					compositor = inputArtista.getText(),
+					compositor = inputCompositor.getText(),
 					fechaLanzamiento = inputFechaLanzamiento.getValue().toString(),
 					album = inputAlbum.getText(),
 					usuarioActivo = gestorPerfilUsuarios.getUsuarioActivo().getNombreUsuario(),

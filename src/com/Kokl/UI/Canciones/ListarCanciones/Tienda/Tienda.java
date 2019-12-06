@@ -20,8 +20,8 @@ public class Tienda {
 
 		for(String cancion : listaInfoCanciones){
 			String nombreCancion = cancion.split("_")[0],
-					usuario = cancion.split("_")[1],
-					id = cancion.split("_")[2];
+					usuario = cancion.split("_")[7],
+					id = cancion.split("_")[8];
 
 			if(usuario.equals("0")){
 				GridPane panelCancion = new GridPane();

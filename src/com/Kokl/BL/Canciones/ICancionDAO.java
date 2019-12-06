@@ -9,4 +9,5 @@ public interface ICancionDAO {
 	public Cancion getById(String nombre) throws Exception;
 	public ArrayList<Cancion> getCanciones() throws Exception;
 	public boolean removerCancion(String id) throws Exception;
+	public boolean editarCancion(Cancion cancionEncontrada);
 }

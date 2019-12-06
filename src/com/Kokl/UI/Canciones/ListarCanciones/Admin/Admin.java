@@ -2,11 +2,11 @@ package com.Kokl.UI.Canciones.ListarCanciones.Admin;
 
 import com.Kokl.TL.Canciones.ListarCanciones.ListarCancionesController;
 import com.Kokl.UI.Rutas;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Admin {
@@ -20,8 +20,8 @@ public class Admin {
 
 		for(String cancion : listaInfoCanciones){
 			String nombreCancion = cancion.split("_")[0],
-					usuario = cancion.split("_")[1],
-					id = cancion.split("_")[2];
+					usuario = cancion.split("_")[7],
+					id = cancion.split("_")[8];
 
 			if(usuario.equals("0")){
 				GridPane panelCancion = new GridPane();
@@ -29,7 +29,13 @@ public class Admin {
 				Button btnEditar = new Button("Editar");
 				Button btnRemover = new Button("Remover");
 
-				btnEditar.setOnAction(e -> editarCancion(id));
+				btnEditar.setOnAction(e -> {
+					try {
+						editarCancion(e, cancion);
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
+				});
 				btnRemover.setOnAction(e -> {
 					try {
 						removerCancion(e, id, nombreUsuarioActivo);
@@ -56,8 +62,8 @@ public class Admin {
 		return panelAdmin;
 	}
 
-	private void editarCancion(String id) {
-		System.out.println(id);
+	private void editarCancion(javafx.event.ActionEvent e, String infoCancion) throws Exception {
+		rutas.redirigirEditarCancion(e, infoCancion);
 	}
 
 	private void removerCancion(javafx.event.ActionEvent event, String id, String nombreUsuarioActivo) throws Exception {
