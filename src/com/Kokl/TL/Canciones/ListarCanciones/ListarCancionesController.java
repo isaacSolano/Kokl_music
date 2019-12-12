@@ -30,20 +30,24 @@ public class ListarCancionesController {
 	}
 
 	public boolean agregarCatalogo(String nombreUsuarioActivo, String id) throws Exception {
-		boolean err;
-
 		Cancion cancionEncontrada = cancionesDAO.getById(id);
 
 		cancionEncontrada.setUsuario(nombreUsuarioActivo);
 		cancionEncontrada.setId(String.format("%06d", (rdm.nextInt(999999))));
 
-		err = cancionesDAO.registrarCancion(cancionEncontrada);
+		boolean err = cancionesDAO.registrarCancion(cancionEncontrada);
 
 		return err;
 	}
 
 	public boolean removerCancion(String id) throws Exception {
 		boolean err = cancionesDAO.removerCancion(id);
+
+		return err;
+	}
+
+	public boolean removerCancionLista(String idCancion) throws Exception {
+		boolean err = cancionesDAO.removerCancionLista(idCancion);
 
 		return err;
 	}

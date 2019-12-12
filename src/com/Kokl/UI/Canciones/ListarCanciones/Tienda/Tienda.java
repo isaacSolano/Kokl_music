@@ -18,33 +18,67 @@ public class Tienda {
 		GridPane panelTienda = new GridPane();
 		int rowIndex = 3;
 
+		Label txtTituloNombreCancion = new Label("Nombre"),
+				txtTituloGenero = new Label("Género"),
+				txtTituloFechaLanzamiento = new Label("Lanzamiento"),
+				txtTituloAlbum = new Label("Album"),
+				txtTituloCalificacion = new Label("Calificación"),
+				txtTituloAcciones = new Label("Acciones");
+
+		txtTituloNombreCancion.setStyle("-fx-padding: 10");
+		txtTituloGenero.setStyle("-fx-padding: 10");
+		txtTituloFechaLanzamiento.setStyle("-fx-padding: 10");
+		txtTituloAlbum.setStyle("-fx-padding: 10");
+		txtTituloCalificacion.setStyle("-fx-padding: 10");
+		txtTituloAcciones.setStyle("-fx-padding: 10");
+
+		panelTienda.add(txtTituloNombreCancion, 1, 2);
+		panelTienda.add(txtTituloGenero, 2, 2);
+		panelTienda.add(txtTituloFechaLanzamiento, 3, 2);
+		panelTienda.add(txtTituloAlbum, 4, 2);
+		panelTienda.add(txtTituloCalificacion, 5, 2);
+		panelTienda.add(txtTituloAcciones, 6, 2);
+
 		for(String cancion : listaInfoCanciones){
 			String nombreCancion = cancion.split("_")[0],
-					usuario = cancion.split("_")[7],
-					id = cancion.split("_")[8];
+					genero = cancion.split("_")[1],
+					fechaLanzamiento = cancion.split("_")[4],
+					album = cancion.split("_")[5],
+					calificacion = cancion.split("_")[6],
+					usuarioCancion = cancion.split("_")[7],
+					idCancion = cancion.split("_")[8];
 
-			if(usuario.equals("0")){
-				GridPane panelCancion = new GridPane();
-				Label txtNombreCancion = new Label(nombreCancion);
+			if(usuarioCancion.equals("0")){
+				Label txtNombreCancion = new Label(nombreCancion),
+						txtGenero = new Label(genero),
+						txtFechaLanzamiento = new Label(fechaLanzamiento),
+						txtAlbum = new Label(album),
+						txtCalificacion = new Label(calificacion);
+
 				Button btnAgregarCatalogo = new Button("Agregar a mi catálogo");
-
-				panelCancion.setPadding(new Insets(20, 0, 0, 0));
-				txtNombreCancion.setPadding(new Insets(0, 20, 0, 0));
 
 				btnAgregarCatalogo.setOnAction( e-> {
 					try {
-						agregarCatalogo(e, nombreUsuarioActivo, id);
+						agregarCatalogo(e, nombreUsuarioActivo, idCancion);
 					} catch (Exception ex) {
 						ex.printStackTrace();
 					}
 				});
 
-				panelCancion.add(txtNombreCancion, 1, 1);
-				panelCancion.add(btnAgregarCatalogo, 2, 1);
+				txtNombreCancion.setStyle("-fx-padding: 10");
+				txtGenero.setStyle("-fx-padding: 10");
+				txtFechaLanzamiento.setStyle("-fx-padding: 10");
+				txtAlbum.setStyle("-fx-padding: 10");
+				txtCalificacion.setStyle("-fx-padding: 10");
 
-				panelCancion.setAlignment(Pos.CENTER);
+				panelTienda.add(txtNombreCancion, 1, rowIndex);
+				panelTienda.add(txtGenero, 2, rowIndex);
+				panelTienda.add(txtFechaLanzamiento, 3, rowIndex);
+				panelTienda.add(txtAlbum, 4, rowIndex);
+				panelTienda.add(txtCalificacion, 5, rowIndex);
+				panelTienda.add(btnAgregarCatalogo, 6, rowIndex);
 
-				panelTienda.add(panelCancion, 1, rowIndex);
+				panelTienda.setAlignment(Pos.CENTER);
 				rowIndex++;
 			}
 		}

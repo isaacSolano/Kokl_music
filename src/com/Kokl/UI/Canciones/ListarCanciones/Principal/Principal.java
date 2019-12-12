@@ -47,6 +47,7 @@ public class Principal extends Perfil {
 
 	public void setPanelesCliente(String nombreUsuarioActivo) throws Exception {
 		GridPane panelOpciones = new GridPane();
+		String tipo = "admCanciones";
 
 		btnTienda.setOnAction( e -> mostrarPanelTienda());
 		btnCatalogo.setOnAction(e -> mostrarPanelCatalogo());
@@ -55,7 +56,7 @@ public class Principal extends Perfil {
 		panelOpciones.add(btnCatalogo, 2, 2);
 
 		panelTienda = tienda.crearPanelTienda(nombreUsuarioActivo);
-		panelCatalogo = catalogo.crearPanelCatalogo(nombreUsuarioActivo);
+		panelCatalogo = catalogo.crearPanelCatalogoAdmCanciones(nombreUsuarioActivo);
 
 		panelOpciones.setAlignment(Pos.CENTER);
 		panelTienda.setAlignment(Pos.CENTER);

@@ -86,4 +86,13 @@ public class MYSQLCancionDAO implements ICancionDAO {
 
 		return err;
 	}
+
+	public boolean removerCancionLista(String idCancion) throws Exception {
+		boolean err = false;
+
+		req = "DELETE FROM kokl.canciones_lista WHERE idCancion='"+idCancion+"'";
+		Connector.getConnector().POST(req);
+		return err;
+	}
+
 }

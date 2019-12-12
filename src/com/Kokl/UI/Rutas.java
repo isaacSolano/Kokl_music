@@ -3,7 +3,10 @@ package com.Kokl.UI;
 import com.Kokl.UI.Canciones.EditarCanciones.EditarCanciones;
 import com.Kokl.UI.Canciones.ListarCanciones.Principal.Principal;
 import com.Kokl.UI.Canciones.RegistrarCanciones.RegistrarCanciones;
+import com.Kokl.UI.Listas.AgregarCancionesLista.AgregarCancionesLista;
+import com.Kokl.UI.Listas.ListarCancionesLista.ListarCancionesLista;
 import com.Kokl.UI.Usuarios.PerfilIndex.PerfilIndex;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -111,6 +114,36 @@ public class Rutas {
         Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
         ventana.setTitle("Editar canciones");
         ventana.setScene(editarCancionesEscena);
+        ventana.show();
+    }
+
+    public void redirigirAgregarCancionesLista(javafx.event.ActionEvent event, String idLista) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Listas/AgregarCancionesLista/AgregarCancionesLista.fxml"));
+        Parent agregarCancionesLista = loader.load();
+
+        AgregarCancionesLista controller = loader.getController();
+        controller.setAgregarCancionesLista(idLista);
+
+        Scene agregarCancionesListaEscena = new Scene(agregarCancionesLista, 800, 775);
+
+        Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
+        ventana.setTitle("Agregar canciones");
+        ventana.setScene(agregarCancionesListaEscena);
+        ventana.show();
+    }
+
+    public void redirigirlistarCancionesLista(ActionEvent event, String idLista) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Listas/ListarCancionesLista/ListarCancionesLista.fxml"));
+        Parent listarCancionesLista = loader.load();
+
+        ListarCancionesLista controller = loader.getController();
+        controller.setListaCancionesLista(idLista);
+
+        Scene listarCancionesListaEscena = new Scene(listarCancionesLista, 800, 775);
+
+        Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
+        ventana.setTitle("Agregar canciones");
+        ventana.setScene(listarCancionesListaEscena);
         ventana.show();
     }
 }

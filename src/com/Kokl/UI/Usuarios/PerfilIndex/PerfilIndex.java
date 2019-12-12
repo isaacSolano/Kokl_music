@@ -2,7 +2,9 @@ package com.Kokl.UI.Usuarios.PerfilIndex;
 
 import com.Kokl.BL.Usuarios.Obj.Usuario;
 
+import com.Kokl.UI.Listas.ListarListas.ListarListas;
 import com.Kokl.UI.Perfil.Perfil;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
@@ -11,13 +13,23 @@ import java.util.Optional;
 
 public class PerfilIndex extends Perfil {
     public GridPane panelPrincipal, panelContenido;
+    public ListarListas listarListas = new ListarListas();
 
     public void setUsuarioActivo(String nombreUsuarioActivo, javafx.event.ActionEvent event) throws Exception {
         GridPane panelNavegacion = navegacion.crearPanelNavegacion(nombreUsuarioActivo);
-        Label etiquetaBienvenida = new Label("Buenveni@ " + nombreUsuarioActivo);
+        GridPane panelListas = listarListas.setListas(nombreUsuarioActivo);
+        Label etiquetaBienvenida;
+
+        if(navegacion.instance != 1){
+            panelContenido.add(panelListas, 1, 3);
+            etiquetaBienvenida = new Label("Listas de reprodución de: " + nombreUsuarioActivo);
+        }else{
+            etiquetaBienvenida = new Label("Bienvenido administrador");
+        }
 
         panelPrincipal.add(panelNavegacion, 1, 1);
         panelContenido.add(etiquetaBienvenida, 1, 2);
+
 
         verificarCodigoActivacion(event);
         verificarContrasenaTemp(event);

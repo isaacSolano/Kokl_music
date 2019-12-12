@@ -6,7 +6,6 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Admin {
@@ -14,18 +13,54 @@ public class Admin {
 	Rutas rutas = new Rutas();
 
 	public GridPane crearPanelAdmin(String nombreUsuarioActivo) throws Exception {
-		GridPane panelAdmin = new GridPane();
 		ArrayList<String> listaInfoCanciones = gestorListaCanciones.getCanciones();
-		int rowIndex = 0;
+
+		GridPane panelAdmin = new GridPane();
+		int rowIndex = 3;
+
+		Label txtTituloNombreCancion = new Label("Nombre"),
+				txtTituloGenero = new Label("Género"),
+				txtTituloFechaLanzamiento = new Label("Lanzamiento"),
+				txtTituloAlbum = new Label("Album"),
+				txtTituloCalificacion = new Label("Calificación"),
+				txtTituloAcciones = new Label("Acciones");
+
+		txtTituloNombreCancion.setStyle("-fx-padding: 10");
+		txtTituloGenero.setStyle("-fx-padding: 10");
+		txtTituloFechaLanzamiento.setStyle("-fx-padding: 10");
+		txtTituloAlbum.setStyle("-fx-padding: 10");
+		txtTituloCalificacion.setStyle("-fx-padding: 10");
+		txtTituloAcciones.setStyle("-fx-padding: 10");
+
+		panelAdmin.add(txtTituloNombreCancion, 1, 2);
+		panelAdmin.add(txtTituloGenero, 2, 2);
+		panelAdmin.add(txtTituloFechaLanzamiento, 3, 2);
+		panelAdmin.add(txtTituloAlbum, 4, 2);
+		panelAdmin.add(txtTituloCalificacion, 5, 2);
+		panelAdmin.add(txtTituloAcciones, 6, 2);
 
 		for(String cancion : listaInfoCanciones){
 			String nombreCancion = cancion.split("_")[0],
-					usuario = cancion.split("_")[7],
-					id = cancion.split("_")[8];
+					genero = cancion.split("_")[1],
+					fechaLanzamiento = cancion.split("_")[4],
+					album = cancion.split("_")[5],
+					calificacion = cancion.split("_")[6],
+					usuarioCancion = cancion.split("_")[7],
+					idCancion = cancion.split("_")[8];
 
-			if(usuario.equals("0")){
-				GridPane panelCancion = new GridPane();
-				Label txtNombreCancion = new Label(nombreCancion);
+			if(usuarioCancion.equals("0")){
+				Label txtNombreCancion = new Label(nombreCancion),
+						txtGenero = new Label(genero),
+						txtFechaLanzamiento = new Label(fechaLanzamiento),
+						txtAlbum = new Label(album),
+						txtCalificacion = new Label(calificacion);
+
+				txtNombreCancion.setStyle("-fx-padding: 10");
+				txtGenero.setStyle("-fx-padding: 10");
+				txtFechaLanzamiento.setStyle("-fx-padding: 10");
+				txtAlbum.setStyle("-fx-padding: 10");
+				txtCalificacion.setStyle("-fx-padding: 10");
+
 				Button btnEditar = new Button("Editar");
 				Button btnRemover = new Button("Remover");
 
@@ -38,23 +73,22 @@ public class Admin {
 				});
 				btnRemover.setOnAction(e -> {
 					try {
-						removerCancion(e, id, nombreUsuarioActivo);
+						removerCancion(e, idCancion, nombreUsuarioActivo);
 					} catch (Exception ex) {
 						ex.printStackTrace();
 					}
 				});
 
-				panelCancion.setPadding(new Insets(20, 0, 0, 0));
-				txtNombreCancion.setPadding(new Insets(0, 20, 0, 0));
-				btnEditar.setPadding(new Insets(0, 20, 0, 0));
+				panelAdmin.add(txtNombreCancion, 1, rowIndex);
+				panelAdmin.add(txtGenero, 2, rowIndex);
+				panelAdmin.add(txtFechaLanzamiento, 3, rowIndex);
+				panelAdmin.add(txtAlbum, 4, rowIndex);
+				panelAdmin.add(txtCalificacion, 5, rowIndex);
+				panelAdmin.add(btnEditar, 6, rowIndex);
+				panelAdmin.add(btnRemover, 7, rowIndex);
 
-				panelCancion.add(txtNombreCancion, 1, 1);
-				panelCancion.add(btnEditar, 2, 1);
-				panelCancion.add(btnRemover, 3, 1);
-				panelCancion.setAlignment(Pos.CENTER);
+				panelAdmin.setAlignment(Pos.CENTER);
 
-
-				panelAdmin.add(panelCancion, 1, rowIndex);
 				rowIndex++;
 			}
 		}

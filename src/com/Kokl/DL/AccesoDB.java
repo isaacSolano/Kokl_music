@@ -3,7 +3,6 @@ package com.Kokl.DL;
 import java.sql.*;
 
 public class AccesoDB {
-
 	private Connection CONN;
 	private Statement STMT;
 

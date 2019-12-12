@@ -8,6 +8,7 @@
 }
 .label{
     -fx-text-fill: #fbeed7;
+    -fx-padding: 3;
 }
 .text-field{
     -fx-pref-width: 300;

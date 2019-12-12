@@ -1,5 +1,6 @@
 package com.Kokl.UI.Usuarios.Navegacion;
 
+import com.Kokl.UI.Listas.RegistrarLista.RegistrarLista;
 import com.Kokl.UI.Perfil.Perfil;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -10,12 +11,36 @@ import java.util.Random;
 
 public class Navegacion extends Perfil {
 	Random rdm = new Random();
-
+	RegistrarLista gestorRegistroLista = new RegistrarLista();
+	public int instance = 0;
 
 	public GridPane crearPanelNavegacion(String nombreUsuarioActivo) throws Exception {
-		int instance = gestorPerfilUsuarios.setUsuarioActivo(nombreUsuarioActivo);
+		instance = gestorPerfilUsuarios.setUsuarioActivo(nombreUsuarioActivo);
 
 		GridPane panelNavegacion= new GridPane();
+
+		if(instance == 1) {
+			Button btnAgregarCanciones = new Button("Agregar canción");
+			btnAgregarCanciones.setOnAction( e -> {
+				try {
+					agregarCancion(nombreUsuarioActivo, e);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			});
+			panelNavegacion.add(btnAgregarCanciones, 2, 1);
+		}else if(instance != 1){
+			Button btnNuevaLista = new Button("Agregar lista");
+			btnNuevaLista.setOnAction( e -> {
+				try{
+					agregarListaReproduccion(e, nombreUsuarioActivo);
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			});
+
+			panelNavegacion.add(btnNuevaLista, 2, 1);
+		}
 
 		Button btnPerfil = new Button("Inicio");
 		btnPerfil.setOnAction( e -> {
@@ -26,20 +51,10 @@ public class Navegacion extends Perfil {
 			}
 		});
 
-        if(instance == 1) {
-            Button btnAgregarCanciones = new Button("Agregar canción");
-            btnAgregarCanciones.setOnAction( e -> {
-				try {
-					agregarCancion(nombreUsuarioActivo, e);
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
-			});
-            panelNavegacion.add(btnAgregarCanciones, 2, 1);
-        }
 
-        Button btnNuevaLista = new Button("Agregar lista");
-//        agregar action event
+        if(instance != 1){
+
+		}
 
 		Button btnListarCanciones = new Button("Listar canciones");
 		btnListarCanciones.setOnAction( e -> {
@@ -69,10 +84,9 @@ public class Navegacion extends Perfil {
 		});
 
         panelNavegacion.add(btnPerfil, 1, 1);
-        panelNavegacion.add(btnNuevaLista, 3, 1);
-        panelNavegacion.add(btnListarCanciones, 4, 1);
-        panelNavegacion.add(btnCambiarContrasena, 5, 1);
-        panelNavegacion.add(btnCerrarSesion, 6, 1);
+        panelNavegacion.add(btnListarCanciones, 3, 1);
+        panelNavegacion.add(btnCambiarContrasena, 4, 1);
+        panelNavegacion.add(btnCerrarSesion, 5, 1);
 
         panelNavegacion.getStyleClass().add("menu");
 
@@ -81,6 +95,10 @@ public class Navegacion extends Perfil {
 
     public void agregarCancion(String nombreUsuarioActivo, javafx.event.ActionEvent e) throws Exception {
 		rutas.redirigirRegistrarCancion(nombreUsuarioActivo, e);
+	}
+
+	public void agregarListaReproduccion(javafx.event.ActionEvent e, String nombreUsuarioActivo) throws Exception{
+		gestorRegistroLista.registrarLista(e, nombreUsuarioActivo);
 	}
 
     public void cerrarSesion(javafx.event.ActionEvent event) throws IOException {
