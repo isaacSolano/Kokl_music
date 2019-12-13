@@ -2,52 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Listas/MYSQLListaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/TL/Listas/AgregarLista/AgregarListaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/TL/Listas/ListarListas/ListarListasController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/AgregarCancionesLista/AgregarCancionesLista.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/AgregarCancionesLista/AgregarCancionesLista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/ListarCancionesLista/ListarCancionesLista.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/ListarCancionesLista/ListarCancionesLista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/ListarListas/ListarListas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/RegistrarLista/RegistrarLista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ReproductorCancion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Canciones/ICancionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Canciones/ICancionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Canciones/MYSQLCancionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Canciones/MYSQLCancionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Factory/DAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Factory/DAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Factory/MYSQLDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Factory/MYSQLDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Listas/ListasBL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Listas/Obj/Lista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/BL/Listas/Obj/Lista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/DL/AccesoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/DL/AccesoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/TL/Canciones/ListarCanciones/ListarCancionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/TL/Canciones/ListarCanciones/ListarCancionesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Admin/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Catalogo/Catalogo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Catalogo/Catalogo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Principal/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Principal/Principal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Tienda/Tienda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/ListarCanciones/Tienda/Tienda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/GeneralStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/GeneralStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Perfil/Perfil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Perfil/Perfil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Rutas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Rutas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/Navegacion/Navegacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/Navegacion/Navegacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kokl/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Canciones/ICancionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Canciones/ICancionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Canciones/MYSQLCancionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Canciones/MYSQLCancionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Factory/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Factory/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Factory/MYSQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Factory/MYSQLDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Listas/ListasBL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Listas/IListaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/BL/Listas/Obj/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/BL/Listas/Obj/Lista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/DL/AccesoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/DL/AccesoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/TL/Canciones/ListarCanciones/ListarCancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/TL/Canciones/ListarCanciones/ListarCancionesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Admin/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Catalogo/Catalogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Catalogo/Catalogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Principal/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Principal/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Tienda/Tienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/ListarCanciones/Tienda/Tienda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/GeneralStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/GeneralStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Perfil/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Perfil/Perfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/ListarCancionesLista/ListarCancionesLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Listas/ListarCancionesLista/ListarCancionesLista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Rutas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Rutas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/Navegacion/Navegacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/Navegacion/Navegacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Kokl/UI/Usuarios/PerfilIndex/PerfilIndex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,6 +92,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -133,7 +103,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tarea_DAO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../practicaDB" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

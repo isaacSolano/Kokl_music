@@ -76,12 +76,12 @@ public class Rutas {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/Kokl/UI/Canciones/RegistrarCanciones/RegistrarCanciones.fxml"));
         Parent registrarCancion = loader.load();
 
-        RegistrarCanciones controller = loader.getController();
-        controller.setNavegacion(nombreUsuarioActivo);
-
         Scene registrarCancionEscena = new Scene(registrarCancion, 800, 775);
 
         Stage ventana = (Stage)((Node) event.getSource()).getScene().getWindow();
+        RegistrarCanciones controller = loader.getController();
+        controller.setNavegacion(nombreUsuarioActivo, ventana);
+
         ventana.setTitle("Registro canciones");
         ventana.setScene(registrarCancionEscena);
         ventana.show();

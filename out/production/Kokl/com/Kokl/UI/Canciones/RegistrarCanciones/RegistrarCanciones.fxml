@@ -27,13 +27,17 @@
         <Label text="Calificación" GridPane.rowIndex="13" GridPane.columnIndex="1" />
         <TextField GridPane.rowIndex="14" GridPane.columnIndex="1" fx:id="inputCalificacion" />
 
-        <GridPane GridPane.rowIndex="18" GridPane.columnIndex="1">
-            <Button text="Registrar información" GridPane.rowIndex="18" GridPane.columnIndex="1" onAction="#registrarCancion" />
-            <Label GridPane.rowIndex="18" GridPane.columnIndex="2" styleClass="separador" />
-            <Button text="Volver" GridPane.rowIndex="18" GridPane.columnIndex="3" onAction="#redirigirPerfil" />
+        <GridPane GridPane.rowIndex="15" GridPane.columnIndex="1" fx:id="panelSelectorArchivos">
+            <Button text="Seleccionar archivo..." GridPane.rowIndex="16" GridPane.columnIndex="1" onAction="#subirArchivo"/>
         </GridPane>
 
-        <GridPane GridPane.rowIndex="20" GridPane.columnIndex="1" fx:id="panelError">
+        <GridPane GridPane.rowIndex="20" GridPane.columnIndex="1">
+            <Button text="Registrar información" GridPane.rowIndex="20" GridPane.columnIndex="1" onAction="#registrarCancion" />
+            <Label GridPane.rowIndex="20" GridPane.columnIndex="2" styleClass="separador" />
+            <Button text="Volver" GridPane.rowIndex="20" GridPane.columnIndex="3" onAction="#redirigirPerfil" />
+        </GridPane>
+
+        <GridPane GridPane.rowIndex="22" GridPane.columnIndex="1" fx:id="panelError">
 
         </GridPane>
     </GridPane>

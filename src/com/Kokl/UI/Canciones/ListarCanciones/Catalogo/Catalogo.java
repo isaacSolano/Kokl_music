@@ -2,8 +2,9 @@ package com.Kokl.UI.Canciones.ListarCanciones.Catalogo;
 
 import com.Kokl.TL.Canciones.ListarCanciones.ListarCancionesController;
 import com.Kokl.TL.Listas.ListarListas.ListarListasController;
+import com.Kokl.UI.Canciones.ReproductorCancion;
 import com.Kokl.UI.Rutas;
-import javafx.geometry.Insets;
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 public class Catalogo {
 	ListarListasController gestorListarListas = new ListarListasController();
 	ListarCancionesController gestorListaCanciones = new ListarCancionesController();
+	ReproductorCancion gestorReproductorCancion = new ReproductorCancion();
+
 	Rutas rutas = new Rutas();
 
 	public GridPane crearPanelCatalogoAdmCanciones(String nombreUsuarioActivo) throws Exception {
@@ -71,6 +74,9 @@ public class Catalogo {
 				panelCatalogo.add(txtCalificacion, 5, rowIndex);
 
 				Button btnRemover = new Button("Remover");
+				Button btnReproducir = new Button("Reproducir");
+				Button btnPausar = new Button("Pausar");
+
 				btnRemover.setOnAction(e -> {
 					try {
 						removerCancion(e, usuarioCancion, idCancion);
@@ -78,8 +84,25 @@ public class Catalogo {
 						ex.printStackTrace();
 					}
 				});
+				btnReproducir.setOnAction(e -> {
+					try{
+						reproducirCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				});
+				btnPausar.setOnAction((e -> {
+					try{
+						pausarCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				}));
 
 				panelCatalogo.add(btnRemover, 6, rowIndex);
+				panelCatalogo.add(btnReproducir, 7, rowIndex);
+				panelCatalogo.add(btnPausar, 8, rowIndex);
+
 				panelCatalogo.setAlignment(Pos.CENTER);
 				panelCatalogo.setStyle("-fx-padding: 10 0 0 0");
 
@@ -140,6 +163,9 @@ public class Catalogo {
 				txtCalificacion.setStyle("-fx-padding: 10");
 
 				Button btnAgregarLista = new Button("Agregar a lista");
+				Button btnReproducir = new Button("Reproducir");
+				Button btnPausar = new Button("Pausar");
+
 				btnAgregarLista.setOnAction(e -> {
 					try {
 						agregarCancionLista(idCancion, idLista, nombreUsuarioActivo);
@@ -147,6 +173,20 @@ public class Catalogo {
 						ex.printStackTrace();
 					}
 				});
+				btnReproducir.setOnAction(e -> {
+					try{
+						reproducirCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				});
+				btnPausar.setOnAction((e -> {
+					try{
+						pausarCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				}));
 
 				panelCatalogo.add(txtNombreCancion, 1, rowIndex);
 				panelCatalogo.add(txtGenero, 2, rowIndex);
@@ -154,6 +194,8 @@ public class Catalogo {
 				panelCatalogo.add(txtAlbum, 4, rowIndex);
 				panelCatalogo.add(txtCalificacion, 5, rowIndex);
 				panelCatalogo.add(btnAgregarLista, 6, rowIndex);
+				panelCatalogo.add(btnReproducir, 7, rowIndex);
+				panelCatalogo.add(btnPausar, 8, rowIndex);
 
 				panelCatalogo.setAlignment(Pos.CENTER);
 				rowIndex++;
@@ -161,6 +203,14 @@ public class Catalogo {
 		}
 
 		return panelCatalogo;
+	}
+
+	private void pausarCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.pausarCancion(nombreCancion);
+	}
+
+	private void reproducirCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.reproducirCancion(nombreCancion);
 	}
 
 	private void agregarCancionLista(String idCancion, String idLista, String nombreUsuarioActivo) throws Exception {

@@ -1,7 +1,9 @@
 package com.Kokl.UI.Canciones.ListarCanciones.Admin;
 
 import com.Kokl.TL.Canciones.ListarCanciones.ListarCancionesController;
+import com.Kokl.UI.Canciones.ReproductorCancion;
 import com.Kokl.UI.Rutas;
+import javafx.event.ActionEvent;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -9,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import java.util.ArrayList;
 
 public class Admin {
+	ReproductorCancion gestorReproductorCancion = new ReproductorCancion();
 	ListarCancionesController gestorListaCanciones = new ListarCancionesController();
 	Rutas rutas = new Rutas();
 
@@ -63,6 +66,8 @@ public class Admin {
 
 				Button btnEditar = new Button("Editar");
 				Button btnRemover = new Button("Remover");
+				Button btnReproducir = new Button("Reproducir");
+				Button btnPausar = new Button("Pausar");
 
 				btnEditar.setOnAction(e -> {
 					try {
@@ -78,6 +83,20 @@ public class Admin {
 						ex.printStackTrace();
 					}
 				});
+				btnReproducir.setOnAction(e -> {
+					try{
+						reproducirCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				});
+				btnPausar.setOnAction((e -> {
+					try{
+						pausarCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				}));
 
 				panelAdmin.add(txtNombreCancion, 1, rowIndex);
 				panelAdmin.add(txtGenero, 2, rowIndex);
@@ -86,6 +105,8 @@ public class Admin {
 				panelAdmin.add(txtCalificacion, 5, rowIndex);
 				panelAdmin.add(btnEditar, 6, rowIndex);
 				panelAdmin.add(btnRemover, 7, rowIndex);
+				panelAdmin.add(btnReproducir, 8, rowIndex);
+				panelAdmin.add(btnPausar, 9, rowIndex);
 
 				panelAdmin.setAlignment(Pos.CENTER);
 
@@ -94,6 +115,14 @@ public class Admin {
 		}
 
 		return panelAdmin;
+	}
+
+	private void pausarCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.pausarCancion(nombreCancion);
+	}
+
+	private void reproducirCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.reproducirCancion(nombreCancion);
 	}
 
 	private void editarCancion(javafx.event.ActionEvent e, String infoCancion) throws Exception {

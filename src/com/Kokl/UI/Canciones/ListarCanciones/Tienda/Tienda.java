@@ -1,8 +1,9 @@
 package com.Kokl.UI.Canciones.ListarCanciones.Tienda;
 
 import com.Kokl.TL.Canciones.ListarCanciones.ListarCancionesController;
+import com.Kokl.UI.Canciones.ReproductorCancion;
 import com.Kokl.UI.Rutas;
-import javafx.geometry.Insets;
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 public class Tienda {
 	Rutas rutas = new Rutas();
 	ListarCancionesController gestorListaCanciones = new ListarCancionesController();
+	ReproductorCancion gestorReproductorCancion = new ReproductorCancion();
+
 
 	public GridPane crearPanelTienda(String nombreUsuarioActivo) throws Exception {
 		ArrayList<String> listaInfoCanciones = gestorListaCanciones.getCanciones();
@@ -56,6 +59,8 @@ public class Tienda {
 						txtCalificacion = new Label(calificacion);
 
 				Button btnAgregarCatalogo = new Button("Agregar a mi catálogo");
+				Button btnReproducir = new Button("Reproducir");
+				Button btnPausar = new Button("Pausar");
 
 				btnAgregarCatalogo.setOnAction( e-> {
 					try {
@@ -64,6 +69,20 @@ public class Tienda {
 						ex.printStackTrace();
 					}
 				});
+				btnReproducir.setOnAction(e -> {
+					try{
+						reproducirCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				});
+				btnPausar.setOnAction((e -> {
+					try{
+						pausarCancion(e, nombreCancion);
+					}catch (Exception ex){
+						ex.printStackTrace();
+					}
+				}));
 
 				txtNombreCancion.setStyle("-fx-padding: 10");
 				txtGenero.setStyle("-fx-padding: 10");
@@ -77,6 +96,8 @@ public class Tienda {
 				panelTienda.add(txtAlbum, 4, rowIndex);
 				panelTienda.add(txtCalificacion, 5, rowIndex);
 				panelTienda.add(btnAgregarCatalogo, 6, rowIndex);
+				panelTienda.add(btnReproducir, 7, rowIndex);
+				panelTienda.add(btnPausar, 8, rowIndex);
 
 				panelTienda.setAlignment(Pos.CENTER);
 				rowIndex++;
@@ -84,6 +105,14 @@ public class Tienda {
 		}
 
 		return panelTienda;
+	}
+
+	private void pausarCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.pausarCancion(nombreCancion);
+	}
+
+	private void reproducirCancion(ActionEvent e, String nombreCancion) {
+		boolean err = gestorReproductorCancion.reproducirCancion(nombreCancion);
 	}
 
 	private void agregarCatalogo(javafx.event.ActionEvent event, String nombreUsuarioActivo, String id) throws Exception {
